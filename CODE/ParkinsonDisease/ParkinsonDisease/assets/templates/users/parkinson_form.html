@@ -1,0 +1,51 @@
+{%extends 'users/userbase.html'%}
+{%load static%}
+
+{%block contents%}
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+<section class="about">
+    <div class="container">
+        <div class="contact-details">
+            <div class="section-header contact-head  text-center">
+                <h2><font color="RED">Prediction Form</font></h2>
+               <p>
+                     <h3>Given Data {{test_data}} and Result is <font color="RED">{{result}}</font></h3>
+    <form method="POST" action="{%url 'user_predict_form'%}" class="bg-light text-dark">
+                {% csrf_token %}
+                <table>
+                    <tr><td>NHR</td><td><input type="number" step="0.000001" name="NHR" max="1" /></td><td>0 to 1</td> </tr>
+                    <tr><td>HNR</td><td><input type="number" step="0.000001" name="HNR" max="100" /></td><td> 0 to 100</td></tr>
+                    <tr><td>RPDE</td><td><input type="number" step="0.000001" name="RPDE" max="1" /></td><td> 0 to 1 </td></tr>
+                    <tr><td>DFA</td><td><input type="number" step="0.000001" name="DFA" max="1"/></td><td>0 to 1 </td></tr>
+                    <tr><td>PPE</td><td><input type="number" step="0.000001" name="PPE" max="1" /></td><td>0 to 1  </td></tr>
+                   <tr><td></td><td><button  class="btn btn-outline-success my-2 my-sm-0" type="submit" style = "margin-left:20%;">Predict</button></td><td></td></tr>
+
+                </table>
+
+            </form>
+
+               </p>
+            </div><!--/.section-header-->
+
+        </div><!--/.contact-details-->
+    </div><!--/.container-->
+
+</section><!--/.contact-->
+{%endblock%}

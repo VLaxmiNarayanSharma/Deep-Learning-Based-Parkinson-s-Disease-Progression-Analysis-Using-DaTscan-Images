@@ -1,0 +1,96 @@
+{%extends 'base.html'%}
+{%block contents%}
+<section class="contact">
+    <div class="container">
+        <div class="contact-details">
+            <div class="section-header contact-head  text-center">
+                <h2>Parkinson’s disease</h2>
+                <p>
+                    Deep Learning Based Parkinson's Disease Progression Analysis Using DaTscan Images
+                </p>
+            </div><!--/.section-header-->
+            <div class="contact-content">
+                <div class="row">
+                    <div class="col-sm-offset-1 col-sm-5">
+                        <div class="single-contact-box">
+                            <div class="contact-right">
+                                <div class="contact-adress">
+                                    <div class="contact-office-address">
+                                        <h3>Selection & Training the Model</h3>
+                                        <p>
+                                            This step serves as a baseline. Since the output of the prediction of
+                                            Parkinson’s disease is a class, it is a classification problem. For the
+                                            detection part we are calculating the UPDRS value and the concluding the
+                                            severity of the disease, so its a regression problem. Study is carried on
+                                            the below mentioned
+                                            classifier and regression algorithm which are as follows:<br/>
+                                            1) XGBoostbr <br/>
+                                            2) Neural Network for regression <br/>
+                                            In machine learning, the dataset is partitioned into three subsets namely
+                                            training set, testing set, and validation set. The author trains the
+                                            classifiers using ‘training dataset’ and tune the parameters using
+                                            ‘validation dataset’.The performance testing of the classifier is checked on
+                                            the previously unseen ‘test dataset’. Usually the dataset is split in the
+                                            ratio 8:2 as train to test dataset.
+                                        </p>
+
+                                    </div><!--/.contact-office-address-->
+
+
+                                </div><!--/.contact-address-->
+                            </div><!--/.contact-right-->
+                        </div><!--/.single-contact-box-->
+                    </div><!--/.col-->
+                    <div class="col-sm-5">
+                        <div class="single-contact-box">
+                            <div class="contact-form">
+                                <h3>User Login Form</h3>
+                                <p style="color:WHITE">
+                                   <form action="{%url 'UserLoginCheck'%}" method="POST" class="text-primary" style="width:100%">
+                    {% csrf_token %}
+                    <table>
+                        <div class="form-group row">
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="loginname" required placeholder="Enter Login Id">
+                </div>
+              </div>
+                        <div class="form-group row">
+                <div class="col-md-12">
+                  <input type="password" class="form-control" name="pswd" required placeholder="Enter password">
+                </div>
+              </div>
+                        <tr>
+                            <td style="padding:20px;">
+                                <button class="btn btn-block btn-primary text-white py-3 px-5" style="margin-left:20%;"
+                                        type="submit">
+                                    Login
+                                </button>
+                            </td>
+                            <td>
+                                <button class="btn btn-block btn-primary text-white py-3 px-5" style="margin-left:20%;"
+                                        type="reset">
+                                    Reset
+                                </button>
+                            </td>
+                        </tr>
+
+                        {% if messages %}
+                        {% for message in messages %}
+                        <font color='GREEN'> {{ message }}</font>
+                        {% endfor %}
+                        {% endif %}
+
+                    </table>
+
+                </form>
+                                </p>
+                            </div><!--/.contact-form-->
+                        </div><!--/.single-contact-box-->
+                    </div><!--/.col-->
+                </div><!--/.row-->
+            </div><!--/.contact-content-->
+        </div><!--/.contact-details-->
+    </div><!--/.container-->
+
+</section><!--/.contact-->
+{%endblock%}

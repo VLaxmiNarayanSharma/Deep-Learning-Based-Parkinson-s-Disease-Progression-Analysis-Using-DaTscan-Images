@@ -1,0 +1,73 @@
+{%extends 'users/userbase.html'%}
+{%load static%}
+{%block contents%}
+<section class="contact">
+    <div class="container">
+        <div class="contact-details">
+            <div class="section-header contact-head  text-center">
+                <h2>Parkinson’s disease</h2>
+                <p>
+                    Prediction of Parkinson’s disease and severity of the disease using Machine Learning and Deep
+                    Learning algorithm
+                </p>
+            </div><!--/.section-header-->
+            <div class="contact-content">
+                <div class="row">
+                    <div class="col-sm-offset-1 col-sm-5">
+                        <div class="single-contact-box">
+                            <div class="contact-right">
+                                <div class="contact-adress">
+                                    <div class="contact-office-address">
+                                        <h3>Selection & Training the Model</h3>
+                                        <p>
+                                            This step serves as a baseline. Since the output of the prediction of
+                                            Parkinson’s disease is a class, it is a classification problem. For the
+                                            detection part we are calculating the UPDRS value and the concluding the
+                                            severity of the disease, so its a regression problem. Study is carried on
+                                            the below mentioned
+                                            classifier and regression algorithm which are as follows:<br/>
+                                            1) XGBoostbr <br/>
+                                            2) Neural Network for regression <br/>
+                                            In machine learning, the dataset is partitioned into three subsets namely
+                                            training set, testing set, and validation set. The author trains the
+                                            classifiers using ‘training dataset’ and tune the parameters using
+                                            ‘validation dataset’.The performance testing of the classifier is checked on
+                                            the previously unseen ‘test dataset’. Usually the dataset is split in the
+                                            ratio 8:2 as train to test dataset.
+                                        </p>
+
+                                    </div><!--/.contact-office-address-->
+
+
+                                </div><!--/.contact-address-->
+                            </div><!--/.contact-right-->
+                        </div><!--/.single-contact-box-->
+                    </div><!--/.col-->
+                    <div class="col-sm-5">
+                        <div class="single-contact-box">
+                            <div class="contact-form">
+                                <h3>About Parkinson</h3>
+                                <p style="color:WHITE">
+                                    Parkinson’s disease is a neurodegenerative disease
+                                    which worsens over time. People have trouble vocally, writing,
+                                    strolling, or completing other simple tasks when dopaminegenerating
+                                    neurons in parts of the brain become impaired or
+                                    expire. These symptoms worsen over time, increasing the severity
+                                    of the condition in patients. We have suggested a methodology
+                                    in this article for the prediction of Parkinson’s disease severity
+                                    using deep neural networks on UCI’s Parkinson’s Telemonitoring
+                                    Vocal Data Set of patients. We have created a neural network to
+                                    predict the severity of the disease and a machine learning model
+                                    to detect the disorder. Classification of Parkinson’s Disease is
+                                    done by Neural network, Random Forest Classifier.
+                                </p>
+                            </div><!--/.contact-form-->
+                        </div><!--/.single-contact-box-->
+                    </div><!--/.col-->
+                </div><!--/.row-->
+            </div><!--/.contact-content-->
+        </div><!--/.contact-details-->
+    </div><!--/.container-->
+
+</section><!--/.contact-->
+{%endblock%}

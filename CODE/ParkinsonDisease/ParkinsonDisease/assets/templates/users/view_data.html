@@ -1,0 +1,37 @@
+{%extends 'users/userbase.html'%}
+{%load static%}
+
+{%block contents%}
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+<section class="about">
+    <div class="container">
+        <div class="contact-details">
+            <div class="section-header contact-head  text-center">
+                <h2>View Parkinson Dataset</h2>
+               <p>
+                {{df|safe}}
+                </p>
+            </div><!--/.section-header-->
+
+        </div><!--/.contact-details-->
+    </div><!--/.container-->
+
+</section><!--/.contact-->
+{%endblock%}

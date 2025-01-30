@@ -1,0 +1,127 @@
+{%extends 'base.html'%}
+{%block contents%}
+<section class="contact">
+    <div class="container">
+        <div class="contact-details">
+            <div class="section-header contact-head  text-center">
+                <h2>Parkinson’s disease</h2>
+                <p>
+                    Deep Learning Based Parkinson's Disease Progression Analysis Using DaTscan Images
+                </p>
+            </div><!--/.section-header-->
+            <div class="contact-content">
+                <div class="row">
+                    <div class="col-sm-offset-1 col-sm-5">
+                        <div class="single-contact-box">
+                            <div class="contact-right">
+                                <div class="contact-adress">
+                                    <div class="contact-office-address">
+                                        <h3>Selection & Training the Model</h3>
+                                        <p>
+                                            This step serves as a baseline. Since the output of the prediction of
+                                            Parkinson’s disease is a class, it is a classification problem. For the
+                                            detection part we are calculating the UPDRS value and the concluding the
+                                            severity of the disease, so its a regression problem. Study is carried on
+                                            the below mentioned
+                                            classifier and regression algorithm which are as follows:<br/>
+                                            1) XGBoostbr <br/>
+                                            2) Neural Network for regression <br/>
+                                            In machine learning, the dataset is partitioned into three subsets namely
+                                            training set, testing set, and validation set. The author trains the
+                                            classifiers using ‘training dataset’ and tune the parameters using
+                                            ‘validation dataset’.The performance testing of the classifier is checked on
+                                            the previously unseen ‘test dataset’. Usually the dataset is split in the
+                                            ratio 8:2 as train to test dataset.
+                                        </p>
+
+                                    </div><!--/.contact-office-address-->
+
+
+                                </div><!--/.contact-address-->
+                            </div><!--/.contact-right-->
+                        </div><!--/.single-contact-box-->
+                    </div><!--/.col-->
+                    <div class="col-sm-5">
+                        <div class="single-contact-box">
+                            <div class="contact-form">
+                                <h3>User Registration Form</h3>
+                                <p style="color:WHITE">
+                                    <form action="{%url 'UserRegisterActions'%}" method="POST"  style="width:100%">
+
+                    {% csrf_token %}
+  <table>
+                        <tr><td></td>
+                            <td>User Name</td>
+                            <td>{{form.name}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>Login ID</td>
+                            <td>{{form.loginid}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>Password</td>
+                            <td>{{form.password}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>Mobile</td>
+                            <td>{{form.mobile}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>email</td>
+                            <td>{{form.email}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>Locality</td>
+                            <td>{{form.locality}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>Address</td>
+                            <td>{{form.address}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>City</td>
+                            <td>{{form.city}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>State</td>
+                            <td>{{form.state}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td></td>
+                            <td>{{form.status}}</td>
+                        </tr>
+ <tr><td></td>
+                            <td></td>
+     <td> <button class="btn btn-block btn-primary text-white py-3 px-5" style="margin-center:20%;"
+                                        type="submit">
+                                    Register
+                                </button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-group mt-3">
+                                <span  >&nbsp;</span>
+                            </div>
+                            </td>
+                        </tr>
+
+                        {% if messages %}
+                        {% for message in messages %}
+                        <font color='red'> {{ message }}</font>
+                        {% endfor %}
+                        {% endif %}
+
+                    </table>
+
+                </form>
+                                </p>
+                            </div><!--/.contact-form-->
+                        </div><!--/.single-contact-box-->
+                    </div><!--/.col-->
+                </div><!--/.row-->
+            </div><!--/.contact-content-->
+        </div><!--/.contact-details-->
+    </div><!--/.container-->
+
+</section><!--/.contact-->
+{%endblock%}

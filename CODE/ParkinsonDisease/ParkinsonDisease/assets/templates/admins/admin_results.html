@@ -1,0 +1,79 @@
+{%extends 'admins/adminbase.html'%}
+{%load static%}
+
+{%block contents%}
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+<section class="about">
+    <div class="container">
+        <div class="contact-details">
+            <div class="section-header contact-head  text-center">
+                <h2><font color="RED">Model Results</font></h2>
+               <p>
+               <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>S.No</th>
+      <th>Model Name</th>
+      <th>Accuracy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>XGBoost</td>
+      <td>{{xg_accuracy}}</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ExtraTreesClassifier</td>
+      <td>{{etc_accuracy}}</td>
+    </tr>
+  <tr>
+      <th>3</th>
+      <td>Ada Boost</td>
+      <td>{{ada_accuracy}}</td>
+    </tr>
+   <tr>
+      <th>4</th>
+      <td>Support Vector Machine</td>
+      <td>{{svc_accuracy}}</td>
+    </tr>
+  <tr>
+      <th>5</th>
+      <td>Random Forest</td>
+      <td>{{rf_accuracy}}</td>
+    </tr>
+  <tr>
+      <th>6</th>
+      <td>ANN</td>
+      <td>{{ann_accuracy}}</td>
+    </tr>
+
+  </tbody>
+            </table>
+
+                </p>
+            </div><!--/.section-header-->
+
+        </div><!--/.contact-details-->
+    </div><!--/.container-->
+
+</section><!--/.contact-->
+{%endblock%}
